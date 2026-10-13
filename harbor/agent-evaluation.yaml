@@ -1,0 +1,23 @@
+jobs_dir: jobs/
+n_attempts: 3
+timeout_multiplier: 1.0
+
+orchestrator:
+  type: local
+  n_concurrent_trials:
+
+agents:
+  - name: terminus-2
+    model_name: openai/
+    kwargs:
+      api_base:
+      temperature: 0.7
+      max_turns: 30
+      timeout_sec: 1200
+      model_info:
+        input_cost_per_token:
+        output_cost_per_token:
+        cache_read_cost_per_token:
+
+verifier:
+  timeout_sec: 600
